@@ -1,16 +1,18 @@
-from rest_framework import viewsets, filters, status
-from rest_framework.permissions import IsAuthenticated, AllowAny
-from rest_framework.response import Response
-from rest_framework.decorators import action
-from rest_framework.views import APIView
 import uuid
-from rest_framework.pagination import PageNumberPagination
-from rest_framework_simplejwt.tokens import RefreshToken
-from .models import User
-from django.core.mail import send_mail
-from .serializers import UserSerializer, SignUpSerializer, TokenSerializer
-from .permissions import IsAdminUser, IsAdminOrReadOnly
+
 from api_yamdb.settings import DEFAULT_FROM_EMAIL
+from django.core.mail import send_mail
+from rest_framework import filters, status, viewsets
+from rest_framework.decorators import action
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework_simplejwt.tokens import RefreshToken
+
+from .models import User
+from .permissions import IsAdminOrReadOnly, IsAdminUser
+from .serializers import SignUpSerializer, TokenSerializer, UserSerializer
 
 
 class UsersViewSet(viewsets.ModelViewSet):

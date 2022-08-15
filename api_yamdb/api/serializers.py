@@ -1,10 +1,10 @@
-from django.shortcuts import get_object_or_404
-from django.core.exceptions import ObjectDoesNotExist
-from rest_framework import serializers
-from django.db.models import Avg
-
 import datetime as dt
-from reviews.models import Category, Genre, Title, Comment, Review
+
+from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import Avg
+from django.shortcuts import get_object_or_404
+from rest_framework import serializers
+from reviews.models import Category, Comment, Genre, Review, Title
 
 
 class CategorySerializer(serializers.ModelSerializer):
