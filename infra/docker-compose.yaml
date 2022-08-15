@@ -7,7 +7,7 @@ services:
     env_file:
       - ./.env
   web:
-    build: ../api_yamdb
+    build: kors557/infra:v1.0
     restart: always
     volumes:
       - static_value:/app/static/
