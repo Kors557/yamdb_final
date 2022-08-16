@@ -62,7 +62,7 @@ jobs:
           context: ./api_yamdb
           file: ./api_yamdb/Dockerfile
           push: true
-          tags: kors557/infra:v1.0
+          tags: kors557/yamdb:v1.08.2022
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
